@@ -1,10 +1,6 @@
 <template>
   <div className="tweet">
-    <img
-      :src="user.image"
-      className="profile"
-      alt="profile"
-    />
+    <ProfileImg :image="user.image"/>
 
     <div className="body">
       <div className="top">
@@ -32,6 +28,7 @@
 </template>
 
 <script>
+import ProfileImg from './ProfileImg.vue';
 export default {
   props: {
     user: {
@@ -42,6 +39,9 @@ export default {
     timestamp: String,
     message: String,
   },
+  components: {
+    ProfileImg,
+  }
 }
 </script>
 
